@@ -1,0 +1,144 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --colorTitulos: hwb(0 100% 0% / 0.75);
+    --colorParrafo: hsla(0, 0%, 100%, 0.6);
+    --darkBlue: hsl(233, 47%, 7%);
+    --cardColor: hsl(244, 38%, 16%);
+    --colorHero: hsl(277, 64%, 61%);
+
+    --fuentePrincipal: 'Lexend Deca', sans-serif;
+    --fuenteSecundaria: 'Inter', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*Reset para REMS - 62.5% = 10px de 16px*/
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    background-color: var(--darkBlue);
+    line-height: 1.5;
+}
+
+/* Globales */
+.contenedor {
+    max-width: 140rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Hero */
+.hero {
+    background-image: url(../images/image-header-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem;
+    position: relative;
+}
+
+.hero__contenido {
+    position: absolute;
+    background-color: rgb(176 107 219 / 33%);
+    width: 100%;
+    height: 100%;
+}
+
+/* Card */
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cardColor);
+    margin-top: 4rem;
+    border-radius: 1.2rem;
+    margin-bottom: 4rem;
+}
+.card__contenido {
+    text-align: center;
+    margin-top: 2rem;
+}
+@media (min-width: 1024px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 12rem;
+    }
+    .card__contenido {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        width: 50%;
+        grid-row: 1/2;
+        text-align: left;
+    }
+
+    .card__contenido__lista {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    
+    .hero {
+        grid-column: 2/3;
+    }
+}
+
+.card__contenido__texto {
+    margin-bottom: 2rem;
+}
+
+.texto__titulo {
+    margin-bottom: 1.4rem;
+    color: var(--colorTitulos);
+    font-family: var(--fuentePrincipal);
+    font-weight: 700;
+}
+
+.texto__parrafo {
+    color: var(--colorParrafo);
+    font-family: var(--fuenteSecundaria);
+}
+
+.card__contenido__lista {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.elemento {
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+    .elemento {
+        text-align: left;
+    }
+}
+
+.elemento__titulo {
+    color: var(--colorTitulos);
+    font-family: var(--fuentePrincipal);
+}
+
+.elemento__parrafo {
+    color: var(--colorParrafo);
+    font-family: var(--fuentePrincipal);
+    font-weight: normal;
+}
